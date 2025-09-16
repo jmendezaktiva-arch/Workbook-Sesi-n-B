@@ -262,50 +262,68 @@ document.addEventListener('DOMContentLoaded', function() {
 // --- CÓDIGO A REEMPLAZAR EN app.js ---
 
 // --- EXPORTAR A PDF ---
-document.getElementById('export-pdf').addEventListener('click', async function() {
+document.getElementById('export-pdf').addEventListener('click', function() {
     const { jsPDF } = window.jspdf;
-    const loadingIndicator = document.getElementById('loading');
     const mainContent = document.getElementById('main-content');
+    const loadingIndicator = document.getElementById('loading');
+    const sections = document.querySelectorAll('.section-content');
     loadingIndicator.style.display = 'block';
 
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    
-    // --- NUEVA LÓGICA: CAPTURAR SECCIÓN POR SECCIÓN ---
+    const currentHash = window.location.hash || `#${sectionsData[0].id}`;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
 
-    // 1. Capturar el encabezado primero
-    const header = mainContent.querySelector('header');
-    const headerCanvas = await html2canvas(header, { scale: 2, useCORS: true });
-    const headerImgData = headerCanvas.toDataURL('image/png');
-    const headerRatio = headerCanvas.width / headerCanvas.height;
-    const headerImgHeight = pdfWidth / headerRatio;
-    pdf.addImage(headerImgData, 'PNG', 0, 0, pdfWidth, headerImgHeight);
+    // Show all sections for a complete capture
+    sections.forEach(s => s.classList.add('active'));
+    window.scrollTo(0, 0);
 
-    let currentY = headerImgHeight;
+    html2canvas(mainContent, {
+        scale: 2, // Higher scale for better quality
+        useCORS: true,
+        windowWidth: mainContent.scrollWidth,
+        windowHeight: mainContent.scrollHeight,
+    }).then(canvas => {
+        // Restore the view immediately after capture
+        showSection(currentHash);
+        window.scrollTo(scrollX, scrollY);
+        
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = pdf.internal.pageSize.getHeight();
+        
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+        
+        // Calculate the ratio to maintain aspect ratio
+        const ratio = canvasWidth / canvasHeight;
+        const imgHeight = pdfWidth / ratio;
 
-    // 2. Iterar sobre cada sección del workbook
-    for (const sectionInfo of sectionsData) {
-        const sectionElement = document.getElementById(sectionInfo.id);
-        if (!sectionElement) continue;
+        let heightLeft = imgHeight;
+        let position = 0;
 
-        const sectionCanvas = await html2canvas(sectionElement, { scale: 2, useCORS: true });
-        const sectionImgData = sectionCanvas.toDataURL('image/png');
-        const sectionRatio = sectionCanvas.width / sectionCanvas.height;
-        const sectionImgHeight = pdfWidth / sectionRatio;
+        // Add the first page
+        pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+        heightLeft -= pdfHeight;
 
-        // Comprobar si la sección cabe en la página actual
-        if (currentY + sectionImgHeight > pdf.internal.pageSize.getHeight()) {
+        // Add new pages as long as there's content left
+        while (heightLeft > 0) {
+            position = position - pdfHeight;
             pdf.addPage();
-            currentY = 0; // Reiniciar Y en la nueva página
+            pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+            heightLeft -= pdfHeight;
         }
         
-        pdf.addImage(sectionImgData, 'PNG', 0, currentY, pdfWidth, sectionImgHeight);
-        currentY += sectionImgHeight + 5; // Añadir la altura de la sección y un pequeño margen
-    }
-    
-    const participantName = localStorage.getItem('sesionb_nombre_participante') || 'participante';
-    pdf.save(`Workbook_SesionB_${participantName}.pdf`);
-    loadingIndicator.style.display = 'none';
+        const participantName = localStorage.getItem('sesionb_nombre_participante') || 'participante';
+        pdf.save(`Workbook_SesionB_${participantName}.pdf`);
+        loadingIndicator.style.display = 'none';
+    }).catch(err => {
+        console.error("Error al generar el PDF:", err);
+        loadingIndicator.style.display = 'none';
+        showSection(currentHash);
+        window.scrollTo(scrollX, scrollY);
+    });
 });
 
     // --- INICIALIZACIÓN FINAL ---
