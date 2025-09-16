@@ -112,3 +112,8 @@ h6 {
     border-color: #00529B;
     transform: scale(1.1);
 }
+
+/* --- NUEVO: Estilos para forzar saltos de página en el PDF --- */
+.section-content {
+    page-break-before: always;
+}
