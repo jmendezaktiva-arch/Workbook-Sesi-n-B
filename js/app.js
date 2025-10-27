@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 'plan', title: '5. Plan Maestro de Canal', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>` },
         { id: 'flujo', title: '6. Diseñador de Flujos', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12s2.545-5 7-5c4.455 0 7 5 7 5s-2.545 5-7 5c-4.455 0-7-5-7-5z"></path><path d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path><path d="M20.599 16.5h-1.2a2 2 0 0 0-1.923 1.423l-.485 1.14a1 1 0 0 1-1.838-.78l.485-1.14a2 2 0 0 0-1.923-1.423h-1.2a2 2 0 0 0-1.923 1.423l-.485 1.14a1 1 0 0 1-1.838-.78l.485-1.14a2 2 0 0 0-1.923-1.423H4.4a1 1 0 0 1 0-2h1.199a2 2 0 0 0 1.923-1.423l.485-1.14a1 1 0 0 1 1.838.78l-.485 1.14a2 2 0 0 0 1.923 1.423h1.2a2 2 0 0 0 1.923-1.423l.485-1.14a1 1 0 0 1 1.838.78l-.485 1.14a2 2 0 0 0 1.923 1.423h1.2a1 1 0 0 1 0 2z"></path></svg>` },
         { id: 'sprint', title: '7. Sprint de Implementación', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>` },
+        { id: 'reporte', title: '8. Reporte Final', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>` },
     ];
 
     // --- GENERACIÓN DINÁMICA DE NAVEGACIÓN Y CONTENEDORES ---
@@ -34,38 +35,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // --- INYECCIÓN DE CONTENIDO HTML ---
     
-    document.getElementById('diagnostico').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[0].title}</h2>
-        <div class="instructions-box">
-            <p><strong>Objetivo:</strong> Realizar un diagnóstico para medir el nivel de madurez de tu ecosistema digital e identificar los 2 problemas de mayor impacto.</p>
-        </div>
-        <div class="overflow-x-auto bg-white p-6 rounded-lg shadow-sm border">
-            <h3 class="section-title">Mapa de Ecosistema Digital: Evalúa tu nivel actual</h3>
-            <table class="w-full min-w-[600px] text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
-                    <tr>
-                        <th class="px-6 py-3">Categoría</th>
-                        <th class="px-6 py-3 text-center">0 - Inexistente</th>
-                        <th class="px-6 py-3 text-center">1 - Básico</th>
-                        <th class="px-6 py-3 text-center">2 - Estructurado</th>
-                        <th class="px-6 py-3 text-center">3 - Optimizado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Presencia Orgánica</td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">SEO & Contenido</td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Captación Pagada (Ads)</td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Automatización</td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Comunidad</td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="3"></td></tr>
-                    <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Prospección Manual</td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="3"></td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-sm border mt-8">
-            <label for="diag_problemas" class="font-bold text-gray-700 mb-2 block">Basado en el diagnóstico, identifica tus 2 áreas de mayor oportunidad (las de menor puntuación):</label>
-            <textarea id="diag_problemas" rows="4" class="autosave-input w-full p-3 border border-gray-300 rounded-lg" data-section="diagnostico" data-id="diag_oportunidades"></textarea>
-        </div>
-    `;
+document.getElementById('diagnostico').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[0].title}</h2>
+    <div class="instructions-box">
+        <p><strong>Objetivo:</strong> Realizar un diagnóstico para medir el nivel de madurez de tu ecosistema digital e identificar los 2 problemas de mayor impacto.</p>
+    </div>
+    <div class="overflow-x-auto bg-white p-6 rounded-lg shadow-sm border">
+        <h3 class="section-title">Mapa de Ecosistema Digital: Evalúa tu nivel actual</h3>
+        <table class="w-full min-w-[600px] text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr>
+                    <th class="px-6 py-3">Categoría</th>
+                    <th class="px-6 py-3 text-center">0 - Inexistente</th>
+                    <th class="px-6 py-3 text-center">1 - Básico</th>
+                    <th class="px-6 py-3 text-center">2 - Estructurado</th>
+                    <th class="px-6 py-3 text-center">3 - Optimizado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Presencia Orgánica</td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat1" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat1" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">SEO & Contenido</td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat2" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat2" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Captación Pagada (Ads)</td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat3" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat3" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Automatización</td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat4" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat4" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Comunidad</td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat5" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat5" value="3"></td></tr>
+                <tr class="border-b"><td class="px-6 py-4 font-medium text-gray-900">Prospección Manual</td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="0"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="1"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="2"></td><td class="px-6 py-4 text-center"><input type="radio" name="cat6" class="autosave-input form-radio h-5 w-5 text-brand-blue" data-section="diagnostico" data-id="diag_cat6" value="3"></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-sm border mt-8">
+        <label for="diag_problemas" class="font-bold text-gray-700 mb-2 block">Basado en el diagnóstico, identifica tus 2 áreas de mayor oportunidad (las de menor puntuación):</label>
+        <textarea id="diag_problemas" rows="4" class="autosave-input w-full p-3 border border-gray-300 rounded-lg" data-section="diagnostico" data-id="diag_oportunidades" placeholder="Ej: 1. SEO y Contenido, porque no generamos tráfico. 2. Automatización, porque el seguimiento de leads es manual y lento."></textarea>
+    </div>
+`;
 
     document.getElementById('persona').innerHTML = `
         <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[1].title}</h2>
@@ -73,50 +74,50 @@ document.addEventListener('DOMContentLoaded', function() {
             <p><strong>Objetivo:</strong> Crear un arquetipo detallado del cliente ideal que sirva como brújula para todas las decisiones de marketing.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 1: El Retrato (Datos Demográficos y Laborales)</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="Nombre, Edad, Cargo, Sector..." data-section="persona" data-id="persona_retrato"></textarea></div>
-            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 2: La Mente (Metas y Desafíos)</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué busca lograr? ¿Qué le impide dormir por la noche?" data-section="persona" data-id="persona_mente"></textarea></div>
-            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 3: El Corazón (Objeciones y Motivaciones)</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué le haría dudar? ¿Qué resultado sueña obtener?" data-section="persona" data-id="persona_corazon"></textarea></div>
-            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 4: El Hábitat Digital (Plataformas y Contenidos)</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué 3 redes sociales usa? ¿Qué tipo de contenido consume?" data-section="persona" data-id="persona_habitat"></textarea></div>
+            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 1: Datos Demográficos y Laborales</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="Nombre, Edad, Cargo, Sector..." data-section="persona" data-id="persona_retrato"></textarea></div>
+            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 2: Metas y Desafíos</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué busca lograr? ¿Qué le impide dormir por la noche?" data-section="persona" data-id="persona_mente"></textarea></div>
+            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 3: Objeciones y Motivaciones</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué le haría dudar? ¿Qué resultado sueña obtener?" data-section="persona" data-id="persona_corazon"></textarea></div>
+            <div class="bg-gray-50 p-4 rounded-lg border"><h3 class="font-bold text-lg mb-2 text-gray-800">Sección 4: Plataformas y Contenidos</h3><textarea class="autosave-input w-full p-2 border border-gray-300 rounded-md h-24" placeholder="¿Qué 3 redes sociales usa? ¿Qué tipo de contenido consume?" data-section="persona" data-id="persona_habitat"></textarea></div>
         </div>`;
     
-    document.getElementById('auditoria').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[2].title}</h2>
-        <div class="instructions-box">
-            <p><strong>Objetivo:</strong> Convertir conceptos de "presencia orgánica básica" en una lista de tareas concretas y priorizadas.</p>
-        </div>
-        <div class="overflow-x-auto">
-            <table class="w-full min-w-[800px] text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
-                    <tr><th class="px-4 py-3">Punto de Verificación</th><th class="px-4 py-3">Estado (R/A/V)</th><th class="px-4 py-3">Acción de Mejora Específica</th><th class="px-4 py-3">Responsable y Fecha Límite</th></tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b">
-                        <td class="px-4 py-2 font-medium">CTA claro y visible en Home</td>
-                        <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_accion"></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_responsable"></td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="px-4 py-2 font-medium">Velocidad de carga en móvil (< 3s)</td>
-                        <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_accion"></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_responsable"></td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="px-4 py-2 font-medium">Prueba social presente</td>
-                        <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_accion"></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_responsable"></td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-2 font-medium">Contacto fácil de encontrar</td>
-                        <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_accion"></td>
-                        <td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_responsable"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>`;
+document.getElementById('auditoria').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[2].title}</h2>
+    <div class="instructions-box">
+        <p><strong>Objetivo:</strong> Convertir conceptos de "presencia orgánica básica" en una lista de tareas concretas y priorizadas.</p>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full min-w-[800px] text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr><th class="px-4 py-3">Punto de Verificación</th><th class="px-4 py-3">Estado (R/A/V)</th><th class="px-4 py-3">Acción de Mejora Específica</th><th class="px-4 py-3">Responsable y Fecha Límite</th></tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="px-4 py-2 font-medium">CTA claro y visible en Home</td>
+                    <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Rediseñar banner con botón 'Cotizar Ahora'" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_accion"></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Ana Pérez - 05/11/2025" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_cta_responsable"></td>
+                </tr>
+                <tr class="border-b">
+                    <td class="px-4 py-2 font-medium">Velocidad de carga en móvil (< 3s)</td>
+                    <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Comprimir imágenes con TinyPNG" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_accion"></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Luis García - 12/11/2025" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_velocidad_responsable"></td>
+                </tr>
+                <tr class="border-b">
+                    <td class="px-4 py-2 font-medium">Prueba social presente</td>
+                    <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Agregar sección de testimonios en Home" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_accion"></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Ana Pérez - 15/11/2025" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_prueba_responsable"></td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-2 font-medium">Contacto fácil de encontrar</td>
+                    <td class="px-4 py-2"><select class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_status"><option value="Rojo">Rojo</option><option value="Amarillo">Amarillo</option><option value="Verde">Verde</option></select></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Poner un botón de WhatsApp flotante" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_accion"></td>
+                    <td class="px-4 py-2"><input type="text" placeholder="Ej: Luis García - 18/11/2025" class="autosave-input w-full p-2 border rounded-md" data-section="auditoria" data-id="auditoria_contacto_responsable"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>`;
 
     document.getElementById('matriz').innerHTML = `
         <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[3].title}</h2>
@@ -134,59 +135,99 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>`;
 
-    document.getElementById('plan').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[4].title}</h2>
-        <div class="instructions-box">
-            <p><strong>Objetivo:</strong> Crear un plan estratégico de una página para cada uno de los 2 canales prioritarios seleccionados en la matriz.</p>
+document.getElementById('plan').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[4].title}</h2>
+    <div class="instructions-box">
+        <p><strong>Objetivo:</strong> Crear un plan estratégico de una página para cada uno de los 2 canales prioritarios seleccionados en la matriz.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg border space-y-4">
+            <h3 class="font-bold text-lg text-gray-800">Plan para Canal Prioritario #1</h3>
+            <div><label class="block text-md font-medium text-gray-700">Rol Estratégico del Canal:</label><div class="flex flex-wrap gap-4 mt-2"><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="leads" data-section="plan" data-id="plan1_rol"> Leads</label><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="comunidad" data-section="plan" data-id="plan1_rol"> Comunidad</label><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="ventas" data-section="plan" data-id="plan1_rol"> Ventas</label></div></div>
+            <div><label class="block text-md font-medium text-gray-700">Métrica Clave de Éxito (KPI):</label><input type="text" placeholder="Ej: # de leads calificados por semana" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan1_kpi"></div>
+            <div><label class="block text-md font-medium text-gray-700">Líneas de Contenido Fundacional:</label><textarea rows="3" placeholder="Ej: 1. Tutoriales en video. 2. Casos de éxito de clientes. 3. Guías descargables." class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan1_contenido"></textarea></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-gray-50 p-6 rounded-lg border space-y-4">
-                <h3 class="font-bold text-lg text-gray-800">Plan para Canal Prioritario #1</h3>
-                <div><label class="block text-md font-medium text-gray-700">Rol Estratégico del Canal:</label><div class="flex flex-wrap gap-4 mt-2"><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="leads" data-section="plan" data-id="plan1_rol"> Leads</label><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="comunidad" data-section="plan" data-id="plan1_rol"> Comunidad</label><label class="flex items-center"><input type="radio" name="rol1" class="autosave-input form-radio" value="ventas" data-section="plan" data-id="plan1_rol"> Ventas</label></div></div>
-                <div><label class="block text-md font-medium text-gray-700">Métrica Clave de Éxito (KPI):</label><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan1_kpi"></div>
-                <div><label class="block text-md font-medium text-gray-700">Líneas de Contenido Fundacional:</label><textarea rows="3" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan1_contenido"></textarea></div>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-lg border space-y-4">
-                <h3 class="font-bold text-lg text-gray-800">Plan para Canal Prioritario #2</h3>
-                <div><label class="block text-md font-medium text-gray-700">Rol Estratégico del Canal:</label><div class="flex flex-wrap gap-4 mt-2"><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="leads" data-section="plan" data-id="plan2_rol"> Leads</label><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="comunidad" data-section="plan" data-id="plan2_rol"> Comunidad</label><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="ventas" data-section="plan" data-id="plan2_rol"> Ventas</label></div></div>
-                <div><label class="block text-md font-medium text-gray-700">Métrica Clave de Éxito (KPI):</label><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan2_kpi"></div>
-                <div><label class="block text-md font-medium text-gray-700">Líneas de Contenido Fundacional:</label><textarea rows="3" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan2_contenido"></textarea></div>
-            </div>
-        </div>`;
+        <div class="bg-gray-50 p-6 rounded-lg border space-y-4">
+            <h3 class="font-bold text-lg text-gray-800">Plan para Canal Prioritario #2</h3>
+            <div><label class="block text-md font-medium text-gray-700">Rol Estratégico del Canal:</label><div class="flex flex-wrap gap-4 mt-2"><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="leads" data-section="plan" data-id="plan2_rol"> Leads</label><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="comunidad" data-section="plan" data-id="plan2_rol"> Comunidad</label><label class="flex items-center"><input type="radio" name="rol2" class="autosave-input form-radio" value="ventas" data-section="plan" data-id="plan2_rol"> Ventas</label></div></div>
+            <div><label class="block text-md font-medium text-gray-700">Métrica Clave de Éxito (KPI):</label><input type="text" placeholder="Ej: Tasa de interacción del 5%" class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan2_kpi"></div>
+            <div><label class="block text-md font-medium text-gray-700">Líneas de Contenido Fundacional:</label><textarea rows="3" placeholder="Ej: 1. Videos cortos 'detrás de cámaras'. 2. Encuestas interactivas. 3. Sesiones de Q&A en vivo." class="autosave-input w-full p-2 border rounded-md" data-section="plan" data-id="plan2_contenido"></textarea></div>
+        </div>
+    </div>`;
 
-    document.getElementById('flujo').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[5].title}</h2>
-        <div class="instructions-box">
-             <p><strong>Objetivo:</strong> Diseñar visualmente tu primer embudo de captación y automatización simple y efectivo.</p>
-        </div>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-8 text-center flex-wrap">
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">1. Fuente de Tráfico</h4><textarea placeholder="¿Desde dónde llegará la gente?" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_fuente"></textarea></div>
-            <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">2. La Oferta (Lead Magnet)</h4><textarea placeholder="Mi Lead Magnet es..." class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_oferta"></textarea></div>
-            <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">3. La Captura</h4><textarea placeholder="¿Qué datos pediré?" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_captura"></textarea></div>
-            <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">4. Mensaje de Bienvenida</h4><textarea placeholder="Asunto y primeras líneas..." class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_mensaje"></textarea></div>
-        </div>`;
+document.getElementById('flujo').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[5].title}</h2>
+    <div class="instructions-box">
+         <p><strong>Objetivo:</strong> Diseñar visualmente tu primer embudo de captación y automatización simple y efectivo.</p>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-8 text-center flex-wrap">
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">1. Fuente de Tráfico</h4><textarea placeholder="Ej: Campaña de Anuncios en Instagram" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_fuente"></textarea></div>
+        <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">2. La Oferta (Lead Magnet)</h4><textarea placeholder="Ej: Guía PDF 'Los 5 Errores al Elegir un CRM'" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_oferta"></textarea></div>
+        <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">3. La Captura</h4><textarea placeholder="Ej: Pediremos nombre y correo en una landing page" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_captura"></textarea></div>
+        <div class="text-2xl font-bold text-blue-400 hidden lg:block">→</div>
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 w-full sm:w-5/12 lg:w-1/5"><h4 class="font-bold">4. Mensaje de Bienvenida</h4><textarea placeholder="Ej: Asunto: 'Aquí tienes tu guía'. Cuerpo: 'Hola [Nombre], gracias por tu interés...'" class="autosave-input w-full mt-2 p-2 border rounded-md h-24" data-section="flujo" data-id="flujo_mensaje"></textarea></div>
+    </div>`;
 
-    document.getElementById('sprint').innerHTML = `
-        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[6].title}</h2>
+document.getElementById('sprint').innerHTML = `
+    <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[6].title}</h2>
+    <div class="instructions-box">
+        <p><strong>Objetivo:</strong> Transformar la estrategia en un calendario de ejecución concreto y medible para las próximas 4 semanas.</p>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full min-w-[900px] text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr><th class="px-4 py-3">Semana</th><th class="px-4 py-3">Foco de la Semana</th><th class="px-4 py-3">Tareas Clave (3-5)</th><th class="px-4 py-3">Métrica de Enfoque</th><th class="px-4 py-3">Reflexión</th></tr>
+            </thead>
+            <tbody>
+                <tr class="border-b"><td class="px-4 py-2 font-bold">1</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Lanzamiento Lead Magnet" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_foco"></td><td class="px-4 py-2"><textarea rows="2" placeholder="Ej: 1. Configurar campaña. 2. Diseñar creativos. 3. Escribir copies." class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué funcionó?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_reflexion"></textarea></td></tr>
+                <tr class="border-b"><td class="px-4 py-2 font-bold">2</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Optimización de Anuncios" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_foco"></td><td class="px-4 py-2"><textarea rows="2" placeholder="Ej: 1. Analizar CTR. 2. Probar 2 nuevos públicos. 3. Ajustar presupuesto." class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué aprendimos?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_reflexion"></textarea></td></tr>
+                <tr class="border-b"><td class="px-4 py-2 font-bold">3</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Crear contenido orgánico" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_foco"></td><td class="px-4 py-2"><textarea rows="2" placeholder="Ej: 1. Grabar 3 videos cortos. 2. Escribir 1 artículo de blog. 3. Publicar en redes." class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué gustó más?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_reflexion"></textarea></td></tr>
+                <tr><td class="px-4 py-2 font-bold">4</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Revisión y Planificación" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_foco"></td><td class="px-4 py-2"><textarea rows="2" placeholder="Ej: 1. Revisar KPIs del mes. 2. Analizar feedback. 3. Planificar sprint siguiente." class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué mejoraremos?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_reflexion"></textarea></td></tr>
+            </tbody>
+        </table>
+    </div>`;
+
+    // --- CÓDIGO NUEVO A PEGAR EN app.js ---
+
+    document.getElementById('reporte').innerHTML = `
+        <h2 class="text-3xl font-bold brand-orange mb-4">${sectionsData[7].title}</h2>
         <div class="instructions-box">
-            <p><strong>Objetivo:</strong> Transformar la estrategia en un calendario de ejecución concreto y medible para las próximas 4 semanas.</p>
+            <p><strong>Objetivo:</strong> Consolidar en una sola vista toda la información estratégica definida en el workbook para facilitar la toma de decisiones y la ejecución.</p>
         </div>
-        <div class="overflow-x-auto">
-            <table class="w-full min-w-[900px] text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
-                    <tr><th class="px-4 py-3">Semana</th><th class="px-4 py-3">Foco de la Semana</th><th class="px-4 py-3">Tareas Clave (3-5)</th><th class="px-4 py-3">Métrica de Enfoque</th><th class="px-4 py-3">Reflexión</th></tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b"><td class="px-4 py-2 font-bold">1</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Lanzamiento" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_foco"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_tareas"></textarea></td><td class="px-4 py-2"><input type="text" placeholder="¿Qué número miraré?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_metrica"></td><td class="px-4 py-2"><textarea rows="2" placeholder="¿Qué funcionó?" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w1_reflexion"></textarea></td></tr>
-                    <tr class="border-b"><td class="px-4 py-2 font-bold">2</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Optimización" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_foco"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_tareas"></textarea></td><td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_metrica"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w2_reflexion"></textarea></td></tr>
-                    <tr class="border-b"><td class="px-4 py-2 font-bold">3</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Escalamiento" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_foco"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_tareas"></textarea></td><td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_metrica"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w3_reflexion"></textarea></td></tr>
-                    <tr><td class="px-4 py-2 font-bold">4</td><td class="px-4 py-2"><input type="text" placeholder="Ej: Revisión y Plan" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_foco"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_tareas"></textarea></td><td class="px-4 py-2"><input type="text" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_metrica"></td><td class="px-4 py-2"><textarea rows="2" class="autosave-input w-full p-2 border rounded-md" data-section="sprint" data-id="sprint_w4_reflexion"></textarea></td></tr>
-                </tbody>
-            </table>
-        </div>`;
+
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-md border"><h3 class="text-2xl font-bold text-gray-800 mb-4">1. Diagnóstico y Oportunidades</h3><p class="text-gray-600 font-medium">Áreas de mayor oportunidad identificadas:</p><div id="reporte_oportunidades" class="mt-2 p-4 bg-gray-50 rounded-md whitespace-pre-wrap"></div></div>
+
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-md border"><h3 class="text-2xl font-bold text-gray-800 mb-4">2. Perfil del Cliente Ideal</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="bg-gray-50 p-4 rounded-md"><h4 class="font-bold text-gray-700">Datos Demográficos y Laborales:</h4><p id="reporte_perfil_retrato" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="bg-gray-50 p-4 rounded-md"><h4 class="font-bold text-gray-700">Metas y Desafíos:</h4><p id="reporte_perfil_mente" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="bg-gray-50 p-4 rounded-md"><h4 class="font-bold text-gray-700">Objeciones y Motivaciones:</h4><p id="reporte_perfil_corazon" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="bg-gray-50 p-4 rounded-md"><h4 class="font-bold text-gray-700">Plataformas y Contenidos:</h4><p id="reporte_perfil_habitat" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div></div></div>
+
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-md border"><h3 class="text-2xl font-bold text-gray-800 mb-4">3. Clasificación de Canales Prioritarios</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="p-4 bg-green-50 rounded-lg border border-green-200"><h4 class="font-bold text-green-700">Joyas de la Corona (Acción Inmediata):</h4><p id="reporte_matriz_q1" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="p-4 bg-red-50 rounded-lg border border-red-200"><h4 class="font-bold text-red-600">Proyectos Estratégicos (Planificar):</h4><p id="reporte_matriz_q2" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200"><h4 class="font-bold text-yellow-700">Victorias Fáciles (Delegar/Automatizar):</h4><p id="reporte_matriz_q3" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div><div class="p-4 bg-gray-100 rounded-lg border border-gray-200"><h4 class="font-bold text-gray-700">Zonas Peligrosas (Evitar):</h4><p id="reporte_matriz_q4" class="mt-1 text-gray-600 whitespace-pre-wrap"></p></div></div></div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md border"><h3 class="text-2xl font-bold text-gray-800 mb-4">4. Plan Maestro de Canales</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div class="bg-gray-50 p-6 rounded-lg border space-y-3"><h4 class="text-lg font-bold text-gray-800">Plan para Canal Prioritario #1</h4><div><p class="font-semibold text-gray-700">Rol Estratégico:</p><p id="reporte_plan1_rol" class="p-2 bg-white rounded"></p></div><div><p class="font-semibold text-gray-700">Métrica Clave (KPI):</p><p id="reporte_plan1_kpi" class="p-2 bg-white rounded"></p></div><div><p class="font-semibold text-gray-700">Líneas de Contenido:</p><p id="reporte_plan1_contenido" class="p-2 bg-white rounded whitespace-pre-wrap"></p></div></div><div class="bg-gray-50 p-6 rounded-lg border space-y-3"><h4 class="text-lg font-bold text-gray-800">Plan para Canal Prioritario #2</h4><div><p class="font-semibold text-gray-700">Rol Estratégico:</p><p id="reporte_plan2_rol" class="p-2 bg-white rounded"></p></div><div><p class="font-semibold text-gray-700">Métrica Clave (KPI):</p><p id="reporte_plan2_kpi" class="p-2 bg-white rounded"></p></div><div><p class="font-semibold text-gray-700">Líneas de Contenido:</p><p id="reporte_plan2_contenido" class="p-2 bg-white rounded whitespace-pre-wrap"></p></div></div></div></div>
+    `;
+
+    function updateReport() {
+        const emptyText = 'Aún no definido.';
+        // 1. Oportunidades
+        document.getElementById('reporte_oportunidades').textContent = localStorage.getItem('sesionb_diag_oportunidades') || emptyText;
+        // 2. Perfil Cliente
+        document.getElementById('reporte_perfil_retrato').textContent = localStorage.getItem('sesionb_persona_retrato') || emptyText;
+        document.getElementById('reporte_perfil_mente').textContent = localStorage.getItem('sesionb_persona_mente') || emptyText;
+        document.getElementById('reporte_perfil_corazon').textContent = localStorage.getItem('sesionb_persona_corazon') || emptyText;
+        document.getElementById('reporte_perfil_habitat').textContent = localStorage.getItem('sesionb_persona_habitat') || emptyText;
+        // 3. Matriz
+        document.getElementById('reporte_matriz_q1').textContent = localStorage.getItem('sesionb_matriz_q1') || emptyText;
+        document.getElementById('reporte_matriz_q2').textContent = localStorage.getItem('sesionb_matriz_q2') || emptyText;
+        document.getElementById('reporte_matriz_q3').textContent = localStorage.getItem('sesionb_matriz_q3') || emptyText;
+        document.getElementById('reporte_matriz_q4').textContent = localStorage.getItem('sesionb_matriz_q4') || emptyText;
+        // 4. Plan Maestro
+        document.getElementById('reporte_plan1_rol').textContent = localStorage.getItem('sesionb_plan1_rol') || emptyText;
+        document.getElementById('reporte_plan1_kpi').textContent = localStorage.getItem('sesionb_plan1_kpi') || emptyText;
+        document.getElementById('reporte_plan1_contenido').textContent = localStorage.getItem('sesionb_plan1_contenido') || emptyText;
+        document.getElementById('reporte_plan2_rol').textContent = localStorage.getItem('sesionb_plan2_rol') || emptyText;
+        document.getElementById('reporte_plan2_kpi').textContent = localStorage.getItem('sesionb_plan2_kpi') || emptyText;
+        document.getElementById('reporte_plan2_contenido').textContent = localStorage.getItem('sesionb_plan2_contenido') || emptyText;
+    }
 
     // --- LÓGICA DE NAVEGACIÓN, AUTOSAVE Y PROGRESO ---
     const navLinks = document.querySelectorAll('.nav-link');
@@ -229,6 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('progress-bar').style.width = `${progress}%`;
     }
 
+// --- REEMPLAZAR ESTA FUNCIÓN COMPLETA ---
     function loadSavedData() {
         document.querySelectorAll('.autosave-input').forEach(input => {
             const savedValue = localStorage.getItem('sesionb_' + input.dataset.id);
@@ -241,49 +283,60 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         checkCompletion();
+        updateReport(); // <-- Línea añadida
     }
 
+// --- REEMPLAZAR ESTE LISTENER COMPLETO ---
     mainContent.addEventListener('input', function(e) {
          if (e.target.classList.contains('autosave-input')) {
             const input = e.target;
             const valueToSave = (input.type === 'checkbox') ? input.checked : input.value;
             localStorage.setItem('sesionb_' + input.dataset.id, valueToSave);
             checkCompletion();
+            updateReport(); // <-- Línea añadida
          }
     });
+
+// --- REEMPLAZAR ESTE LISTENER COMPLETO ---
     mainContent.addEventListener('change', function(e) {
          if (e.target.classList.contains('autosave-input') && (e.target.type === 'radio' || e.target.tagName === 'SELECT')) {
             const input = e.target;
             localStorage.setItem('sesionb_' + input.dataset.id, input.value);
             checkCompletion();
+            updateReport(); // <-- Línea añadida
          }
     });
 
 // --- CÓDIGO A REEMPLAZAR EN app.js ---
 
 // --- EXPORTAR A PDF ---
+// REEMPLAZA LA FUNCIÓN COMPLETA DE EXPORTAR A PDF CON ESTO
+
 document.getElementById('export-pdf').addEventListener('click', function() {
     const { jsPDF } = window.jspdf;
-    const mainContent = document.getElementById('main-content');
+    // Objetivo modificado: ahora es solo la sección del reporte
+    const reportSection = document.getElementById('reporte'); 
     const loadingIndicator = document.getElementById('loading');
     const sections = document.querySelectorAll('.section-content');
     loadingIndicator.style.display = 'block';
 
+    // Guarda el estado actual de la vista para restaurarlo después
     const currentHash = window.location.hash || `#${sectionsData[0].id}`;
     const scrollX = window.scrollX;
     const scrollY = window.scrollY;
 
-    // Show all sections for a complete capture
-    sections.forEach(s => s.classList.add('active'));
+    // Modificación clave 1: Muestra SOLO la sección del reporte para la captura
+    sections.forEach(s => s.classList.toggle('active', s.id === 'reporte'));
     window.scrollTo(0, 0);
 
-    html2canvas(mainContent, {
-        scale: 2, // Higher scale for better quality
+    // Modificación clave 2: Apunta html2canvas únicamente a la sección del reporte
+    html2canvas(reportSection, {
+        scale: 2, // Mayor escala para mejor calidad
         useCORS: true,
-        windowWidth: mainContent.scrollWidth,
-        windowHeight: mainContent.scrollHeight,
+        windowWidth: reportSection.scrollWidth,
+        windowHeight: reportSection.scrollHeight,
     }).then(canvas => {
-        // Restore the view immediately after capture
+        // Restaura la vista original inmediatamente después de la captura
         showSection(currentHash);
         window.scrollTo(scrollX, scrollY);
         
@@ -291,36 +344,32 @@ document.getElementById('export-pdf').addEventListener('click', function() {
         const pdf = new jsPDF('p', 'mm', 'a4');
         
         const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = pdf.internal.pageSize.getHeight();
-        
         const canvasWidth = canvas.width;
         const canvasHeight = canvas.height;
-        
-        // Calculate the ratio to maintain aspect ratio
         const ratio = canvasWidth / canvasHeight;
         const imgHeight = pdfWidth / ratio;
-
+        
         let heightLeft = imgHeight;
         let position = 0;
 
-        // Add the first page
         pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
-        heightLeft -= pdfHeight;
+        heightLeft -= pdf.internal.pageSize.getHeight();
 
-        // Add new pages as long as there's content left
         while (heightLeft > 0) {
-            position = position - pdfHeight;
+            position = position - pdf.internal.pageSize.getHeight();
             pdf.addPage();
             pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
-            heightLeft -= pdfHeight;
+            heightLeft -= pdf.internal.pageSize.getHeight();
         }
         
         const participantName = localStorage.getItem('sesionb_nombre_participante') || 'participante';
-        pdf.save(`Workbook_SesionB_${participantName}.pdf`);
+        // Nombre del archivo actualizado para reflejar el contenido
+        pdf.save(`ReporteFinal_SesionB_${participantName}.pdf`); 
         loadingIndicator.style.display = 'none';
     }).catch(err => {
         console.error("Error al generar el PDF:", err);
         loadingIndicator.style.display = 'none';
+        // Asegúrate de restaurar la vista también si hay un error
         showSection(currentHash);
         window.scrollTo(scrollX, scrollY);
     });
